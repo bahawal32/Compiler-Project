@@ -48,7 +48,7 @@ bool isString(string buffer, int lineNumber)
 }
 bool isOperator(string buffer, int lineNumber)
 {
-    if (buffer == "+" | buffer == "-" | buffer == "/" | buffer == "*" | buffer == "%")
+    if (buffer == "+" | buffer == "-" | buffer == "/" | buffer == "*" | buffer == "%"||buffer == "="||buffer == "=="||buffer == "<"||buffer == ">"||buffer == "=<" ||buffer == "=>"||buffer == "!=")
     {
 
         cout << buffer << " is a Operator " << endl;
@@ -57,18 +57,19 @@ bool isOperator(string buffer, int lineNumber)
     return false;
 }
 bool isIdentifier(string buffer, int lineNumber){
-     if (buffer[0] >= '0' && buffer[i] <= '9')
-     return false;
-     if (buffer[0] >= 'a' && buffer[i] <= 'z'|| if (buffer[i] >= 'A' && buffer[i] <= 'Z'))
+     if (buffer[0] >= 'a' && buffer[0] <= 'z'||  (buffer[0] >= 'A' && buffer[0] <= 'Z'))
         {
             for(int i = 0; i< buffer.length(); i++)
             {
                 if (isOperator(buffer, lineNumber))
                 return false;
-                if (buffer[i] == '#'||buffer[i] == '@'||buffer[i] == '!'||buffer[i] == '^'||buffer[i] == '&'||buffer[i] == '$'||)
+                if (buffer[i] == '#'||buffer[i] == '@'||buffer[i] == '!'||buffer[i] == '^'||buffer[i] == '&'||buffer[i] == '$')
                 return false;
             }
+            cout<<buffer << " is an identifier"<< endl;
+            return true;
         }
+        return false;
 
 }
 void Tokenization(string fileName)
@@ -93,14 +94,22 @@ void Tokenization(string fileName)
             
             if (isKeyword(buffer, lineNumber))
             {
-            }
+            }else
             if (isNumber(buffer, lineNumber))
             {
-            }
+            }else
          
             if (isOperator(buffer, lineNumber))
             {
+            }else
+
+            if (isIdentifier(buffer, lineNumber))
+            {
+
+            }else{
+                cout<<"Invalid syantax at line "<<lineNumber<<" "<<buffer<<" is not defined"<<endl;
             }
+
 
             lineNumber++;
         }
