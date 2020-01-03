@@ -57,7 +57,19 @@ bool isOperator(string buffer, int lineNumber)
     return false;
 }
 bool isIdentifier(string buffer, int lineNumber){
-    
+     if (buffer[0] >= '0' && buffer[i] <= '9')
+     return false;
+     if (buffer[0] >= 'a' && buffer[i] <= 'z'|| if (buffer[i] >= 'A' && buffer[i] <= 'Z'))
+        {
+            for(int i = 0; i< buffer.length(); i++)
+            {
+                if (isOperator(buffer, lineNumber))
+                return false;
+                if (buffer[i] == '#'||buffer[i] == '@'||buffer[i] == '!'||buffer[i] == '^'||buffer[i] == '&'||buffer[i] == '$'||)
+                return false;
+            }
+        }
+
 }
 void Tokenization(string fileName)
 {
