@@ -1,7 +1,7 @@
-pocho  num :
-agar num % 2 :
+pocho num :
+agar num % a :
     bolo "apka numebr even hai" :
 warna :
+    
     bolo "apka number odd hai" : 
-bolo 2 + 2 :
-bolo 2 2 
+22 a55
