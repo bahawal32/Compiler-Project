@@ -45,14 +45,14 @@ public:
                 break;
             }
         }
-        for (int j = i; j < buffer.length(); j++)
+        for (int j = i+1; j < buffer.length(); j++)
         {
 
             if (buffer[j] == '"' )
             {
                 stringStart =j;
-                true;
-                break;
+                 return true;
+              
             }
         }
            
@@ -112,6 +112,14 @@ public:
 
             while (s >> buffer)
             {
+                 if(buffer[0]=='"'){
+                    string temp;
+                    while(buffer[buffer.size()-1]!='"'){
+                    s>>temp;
+                    buffer=buffer + ' ' +temp;
+                    }
+                    
+                 }
 
                 if (isKeyword(buffer, lineNumber))
                 {
@@ -141,6 +149,8 @@ public:
                     }
                 
                 else if (isString(buffer, lineNumber)){
+                   
+                   
                     
                     cout << buffer << " is a String" << endl;
 
