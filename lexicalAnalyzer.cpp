@@ -120,7 +120,6 @@ public:
                     }
                     
                  }
-
                 if (isKeyword(buffer, lineNumber))
                 {
                     cout << buffer << " is a keyword " << endl;

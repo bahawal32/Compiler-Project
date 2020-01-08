@@ -1,5 +1,6 @@
-pocho num :
+pocho num + 2 :
 agar num % a :
-    bolo "apka numebr even hai" :
+bolo "apka number even hai" :
 warna :
-    bolo "apka number odd hai" :
+bolo "apka number odd hai" :
+a = 2 :
